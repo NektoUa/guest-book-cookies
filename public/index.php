@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once('../src/head.php');
+
+if (empty($_SESSION['count'])) {
+    $_SESSION['count'] = 1;
+} else {
+    $_SESSION['count']++;
+}
 ?>
 
 <body>
@@ -14,6 +20,11 @@ require_once('../src/head.php');
     </div>
     <input type="submit" class="btn btn-primary" value="Enter">
 </form>
+
+<p>
+    Здравствуйте, посетитель, вы видели эту страницу <?php echo $_SESSION['count']; ?> раз.
+</p>
+
 </div>
 <?php
 

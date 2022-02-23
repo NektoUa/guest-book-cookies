@@ -1,11 +1,8 @@
 <?php
-//session_register();
+session_start();
 $val = $_POST["opinion"];
-//array_push($_SESSION, $val);
 $_SESSION['review'][] = $val;
-var_dump($_SESSION);
 require_once('../src/head.php');
-//print_r($_SESSION);
 ?>
 
 <body>
