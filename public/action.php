@@ -1,18 +1,10 @@
 <?php
-//var_dump($_COOKIE);
 session_start();
-//var_dump($_GET);
 $val = $_GET["login"];
 setcookie($val, $val, 0, "/");
 $_SESSION[$val] = $val;
-//var_dump($_SESSION);
 require_once('../src/head.php');
 $out = '';
-//if ($_GET['check'] == '') {
-//    echo 'no';
-//} else {
-//    echo 'yes';
-//}
 foreach ($_COOKIE as $key => $value) {
     if($_COOKIE[$key] == $val){
         $out = 'You\'re logged and welcome!';
